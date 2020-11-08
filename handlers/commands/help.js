@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const {
     prefix
-} = require('../bot/config.json');
-const colors = require('../bot/colors.json');
+} = require('../../conf/config.json');
+const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'help',
     guildOnly: true,

@@ -1,18 +1,25 @@
-const configs = require('../../bot/config.json');
+const configs = require('../../conf/config.json');
+const command_handler = require('../../commands');
 const Discord = require('discord.js');
 
-module.exports.run = (client) => {
+module.exports = {
+    type: 'ready',
+    async run(client) {
 
-    console.log(`${client.user.username}: ` +'now online | version: ' + configs.version);
+        console.log(`${client.user.tag}: ` + 'now online | version: ' + configs.version);
 
-let statuses = [
+        command_handler.initCommands(client);
+    
+        let statuses = [
             `${configs.prefix}help`,
-            'Over the Vibe Lounge'
         ]
+    
+        setInterval(function () {
+            let status = statuses[Math.floor(Math.random() * statuses.length)]
+            client.user.setActivity(status, {
+                type: 'WATCHING'
+            });
+        }, 6000)
 
-    setInterval(function() {
-        let status = statuses[Math.floor(Math.random() * statuses.length)]
-        client.user.setActivity(status, { type: 'WATCHING' });
-    }, 6000)
-
+    }
 }
