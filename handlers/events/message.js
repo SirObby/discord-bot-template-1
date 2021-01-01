@@ -6,7 +6,7 @@ module.exports = {
     type: 'message',
     async run(client, message) {
 
-        if(!message.startsWith(configs.prefix) || message.author.bot) return;
+        if(!message.content.startsWith(configs.prefix) || message.author.bot) return;
 
         const args = message.content.slice(configs.prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
