@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/MatthewTGM/discord-bot-template#readme",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.5.1"
   }
 }
