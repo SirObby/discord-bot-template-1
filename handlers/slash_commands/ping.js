@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const Utils = require('../../slash_utils.js')
+
 module.exports = {
     name: 'ping',
     description: 'Pong!',
@@ -6,12 +9,9 @@ module.exports = {
         "description": "tesssst",
         "type": 3
     }],
-    content: 'Pong!',
-    async run(int, args) {
-        if(args != null) {
-            if(args[0] == 'test') console.log('Hi!');
-            return;
-        }
-        console.log('Hello!');
+    async run(int, args, client) {
+        
+        Utils.respond(int, "Ping", client)
+        
     }
 }
