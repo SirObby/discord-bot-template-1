@@ -11,16 +11,16 @@ module.exports = {
 
                 const args = interaction.data.options;
 
-                client.api.interactions(interaction.id, interaction.token).callback.post({
+                /*client.api.interactions(interaction.id, interaction.token).callback.post({
                     data: {
                         type: 4,
                         data: {
                             content: slash_command.content
                         }
                     }
-                })
+                })*/
 
-                if(interaction.data.name == slash_command.name) slash_command.run(interaction, args);
+                if(interaction.data.name == slash_command.name) slash_command.run(interaction, args, client);
                 
             }
 
